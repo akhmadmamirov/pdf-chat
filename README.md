@@ -15,6 +15,9 @@ pip install -r requirements.txt
 
 # Initialize the database
 flask --app app.web init-db
+
+#Start the terminal with:
+inv dev
 ```
 
 # Running the app
