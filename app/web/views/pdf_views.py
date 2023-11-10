@@ -28,7 +28,7 @@ def upload_file(file_id, file_path, file_name):
 
     if hasattr(process_document, "delay"):
         # used to be: process_document.delay(pdf.id)
-        process_document(pdf.id)
+        process_document.delay(pdf.id)
     else:
         process_document(pdf.id)
 
