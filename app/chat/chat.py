@@ -14,6 +14,7 @@ def select_component(
     components  = get_conversation_components(
         chat_args.conversation_id
     )
+    
     previos_component = components[component_type]
 
     if previos_component:
