@@ -1,23 +1,51 @@
+from app.chat.redis import client
+import random
+
+def random_component_by_score(component_type, component_map):
+    #make sure component_type is llm, retrievery or memory
+    if component_type not in ["llm", "retriever", "memory"]:
+        raise ValueError("Invalid component_type")
+    #from reddis, get the sum of total scores for the given type
+    values = client.hgetall(f"{component_type}_score_values")
+    #from redis, get the hash containing the number of times each component has been voted on
+    counts = client.hgetall(f"{component_type}_score_counts")
+    #gell all the valid component names from the component map
+    names = component_map.keys()
+    #Loop over those valid names and use them to calculate the average score
+    #Add the average score to the dictionary
+    avg_scores = {}
+    for name in names:
+        score = int(values.get(name, 1))
+        count = int(counts.get(name, 1))
+        avg = score / count
+        avg_scores[name] = max(avg, 0.1)
+    #Do a weighten random selection
+    sum_scores = sum(avg_scores.values())
+    random_val = random.uniform(0, sum_scores)
+    cumulative = 0
+
+    for name, score in avg_scores.items():
+        cumulative += score
+        if random_val <= cumulative:
+            return name
+    
+    
+    
 def score_conversation(
     conversation_id: str, score: float, llm: str, retriever: str, memory: str
 ) -> None:
-    """
-    This function interfaces with langfuse to assign a score to a conversation, specified by its ID.
-    It creates a new langfuse score utilizing the provided llm, retriever, and memory components.
-    The details are encapsulated in JSON format and submitted along with the conversation_id and the score.
+    score = min(max(score, 0), 1)
 
-    :param conversation_id: The unique identifier for the conversation to be scored.
-    :param score: The score assigned to the conversation.
-    :param llm: The Language Model component information.
-    :param retriever: The Retriever component information.
-    :param memory: The Memory component information.
+    client.hincrby("llm_score_values", llm, score)
+    client.hincrby("llm_score_counts", llm, 1)
+    
+    client.hincrby("retriever_score_values", retriever, score)
+    client.hincrby("retriever_score_counts", retriever, 1)
+    
+    client.hincrby("memory_score_values", llm, score)
+    client.hincrby("memory_score_counts", llm, 1)
+    
 
-    Example Usage:
-
-    score_conversation('abc123', 0.75, 'llm_info', 'retriever_info', 'memory_info')
-    """
-
-    pass
 
 
 def get_scores():
