@@ -21,6 +21,21 @@ flask --app app.web init-db
 #Start the terminal with:
 inv dev
 ```
+## Required Features
+
+The following **required** functionality is completed:
+
+* Developed text generation pipeline, enabling interaction with any pdf document using OpenAI API and Langchain.
+
+* Allowed streaming responses from LLMs to the user, increasing the overall response rate by 40%.
+
+* Set up the pipeline to self-improve text generation by collecting user feedback on llm, memory and retriever used.
+
+
+## Video Walkthrough
+
+Here's a walkthrough of implemented features:
+* <a href="https://youtu.be/k66s5DFDwTw?feature=shared" target="_blank">Link to the Walkthrough</a>
 
 # Running the app
 <img width="400" alt="spice" src="https://github.com/akhmadmamirov/pdf-chat/assets/105142060/b7625d08-406b-442a-a7b2-1a3f0a22685a">
