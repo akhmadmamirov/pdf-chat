@@ -49,6 +49,8 @@ inv devworker
 ```
 redis-server
 ```
+<img width="400" alt="image" src="https://github.com/akhmadmamirov/pdf-chat/assets/105142060/ae7ffdec-3f7a-41df-b03f-24871214b6c9">
+
 
 ### To reset the database
 
