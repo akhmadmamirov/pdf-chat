@@ -1,4 +1,6 @@
 # First Time Setup
+<img width="413" alt="spice-login" src="https://github.com/akhmadmamirov/pdf-chat/assets/105142060/28bc1ff1-bfe4-4fb9-8bad-e3d94284c488">
+<img width="400" alt="spice-menu" src="https://github.com/akhmadmamirov/pdf-chat/assets/105142060/de1fb34c-56f0-434c-a5db-0352832f2639">
 
 ```
 # Create a virtual environment
@@ -21,6 +23,8 @@ inv dev
 ```
 
 # Running the app
+<img width="400" alt="spice" src="https://github.com/akhmadmamirov/pdf-chat/assets/105142060/b7625d08-406b-442a-a7b2-1a3f0a22685a">
+<img width="400" alt="games" src="https://github.com/akhmadmamirov/pdf-chat/assets/105142060/167fff8b-112d-4fd9-ab35-9df260c0982b">
 
 There are three separate processes that need to be running for the app to work: the server, the worker, and Redis.
 
@@ -51,3 +55,5 @@ redis-server
 ```
 flask --app app.web init-db
 ```
+
+Credits to: Stephen Grider
