@@ -3,8 +3,8 @@
 Text generation pipeline that enables seamless interaction with any PDF document.
 
 # First Time Setup
-<img width="415"  height="250" alt="spice-login" src="https://github.com/akhmadmamirov/pdf-chat/assets/105142060/28bc1ff1-bfe4-4fb9-8bad-e3d94284c488">
-<img width="415"  height="250" alt="spice-menu" src="https://github.com/akhmadmamirov/pdf-chat/assets/105142060/de1fb34c-56f0-434c-a5db-0352832f2639">
+<img width="400"  height="235" alt="spice-login" src="https://github.com/akhmadmamirov/pdf-chat/assets/105142060/28bc1ff1-bfe4-4fb9-8bad-e3d94284c488">
+<img width="400"  height="235" alt="spice-menu" src="https://github.com/akhmadmamirov/pdf-chat/assets/105142060/de1fb34c-56f0-434c-a5db-0352832f2639">
 
 ```
 # Create a virtual environment
